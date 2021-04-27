@@ -25,7 +25,7 @@
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
-(setq doom-theme 'doom-one)
+(setq doom-theme 'doom-gruvbox)
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
@@ -37,12 +37,14 @@
 
 ;; General style
 (add-to-list 'initial-frame-alist '(fullscreen . maximized))
-(setq-default indent-tabs-mode nil)
-(setq-default tab-width 4)
+(split-window-horizontally)
+;;(setq-default indent-tabs-mode nil)
+;;(setq-default tab-width 4)
 
 ;; C coding style
-(setq c-default-style "k&r"
-      c-basic-offset 4)
+(setq c-default-style "k&r")
+;;(setq c-default-style "k&r"
+;;      c-basic-offset 4)
 
 ;; Here are some additional functions/macros that could help you configure Doom:
 ;;
