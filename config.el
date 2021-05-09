@@ -35,6 +35,8 @@
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
 (setq display-line-numbers-type t)
 
+(setq projectile-project-search-path '("~/code/"))
+
 ;; General style
 (add-to-list 'initial-frame-alist '(fullscreen . maximized))
 (split-window-horizontally)
