@@ -39,14 +39,13 @@
 
 ;; General style
 (add-to-list 'initial-frame-alist '(fullscreen . maximized))
-(split-window-horizontally)
+;;(split-window-horizontally)
 ;;(setq-default indent-tabs-mode nil)
 ;;(setq-default tab-width 4)
 
 ;; C coding style
-(setq c-default-style "k&r")
-;;(setq c-default-style "k&r"
-;;      c-basic-offset 4)
+(setq c-default-style "k&r"
+      c-basic-offset 4)
 
 ;; Here are some additional functions/macros that could help you configure Doom:
 ;;
