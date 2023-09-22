@@ -7,7 +7,7 @@
 ;; Some functionality uses this to identify you, e.g. GPG configuration, email
 ;; clients, file templates and snippets.
 (setq user-full-name "Alex Rathbone"
-      user-mail-address "arathn.riv@gmail.com")
+      user-mail-address "alex@rathbone.me")
 
 ;; Doom exposes five (optional) variables for controlling fonts in Doom. Here
 ;; are the three important ones:
@@ -38,7 +38,7 @@
 (setq projectile-project-search-path '("~/code/"))
 
 ;; General style
-(add-to-list 'initial-frame-alist '(fullscreen . maximized))
+;;(add-to-list 'initial-frame-alist '(fullscreen . maximized))
 ;;(split-window-horizontally)
 ;;(setq-default indent-tabs-mode nil)
 ;;(setq-default tab-width 4)
