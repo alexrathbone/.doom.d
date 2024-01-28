@@ -8,6 +8,8 @@
 (after! company
   (setq company-idle-delay nil))
 
+(setq lsp-clients-clangd-args '("--header-insertion=never"))
+
 (setq org-directory "~/org/")
 (setq display-line-numbers-type nil)
 (setq projectile-project-search-path '("~/code/"))
