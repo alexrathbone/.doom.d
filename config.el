@@ -5,6 +5,9 @@
 
 (setq doom-theme 'doom-gruvbox)
 
+(after! company
+  (setq company-idle-delay nil))
+
 (setq org-directory "~/org/")
 (setq display-line-numbers-type nil)
 (setq projectile-project-search-path '("~/code/"))
