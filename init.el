@@ -24,7 +24,7 @@
        doom
        doom-dashboard
        hl-todo
-       indent-guides
+       ;; indent-guides
        modeline
        ophints
        (popup +defaults)
@@ -35,7 +35,8 @@
        :editor
        (evil +everywhere)
        fold
-       ;;(format +onsave)
+       format
+       (whitespace +guess +trim)
 
        :emacs
        (dired +icons)
@@ -81,4 +82,4 @@
        :app
 
        :config
-       (default +bindings +smartparens +gnpug))
+       (default +bindings +smartparens +gnupg))

@@ -17,7 +17,7 @@
 ;;; :completion corfu
 ;; Disable auto completion
 (after! corfu
-	(setq corfu-auto nil))
+  (setq corfu-auto nil))
 
 ;;; :editor evil
 ;; Focus new window after splitting
