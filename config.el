@@ -3,6 +3,16 @@
 (setq user-full-name "Alex Rathbone"
       user-mail-address "alex@rathbone.me")
 
+;;;; slang
+(use-package! slang-mode
+  :mode (("\\.slang\\'" . slang-mode)
+         ("\\.sl\\'" . slang-mode)
+         ("\\.slangh\\'" . slang-mode))
+  :config
+  ;; Optional: Enable LSP support
+  (require 'slang-lsp)
+  (slang-lsp-initialize))
+
 ;;;; UI
 ;; Theme & fonts
 (setq doom-theme 'doom-gruvbox
@@ -25,6 +35,9 @@
       evil-vsplit-window-right t)
 
 ;;; :tools lsp
+(after! lsp-ui
+  (setq lsp-ui-sideline-enable nil
+        lsp-ui-doc-enable nil))
 (setq lsp-lens-enable nil)
 (setq lsp-clients-clangd-args '("--header-insertion=never"))
 
