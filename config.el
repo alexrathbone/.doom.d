@@ -47,7 +47,8 @@
 (setq projectile-project-search-path '("~/code/"))
 
 (after! eglot
-	  (add-hook! 'eglot-managed-mode-hook :append
-		                  (defun +eglot--rm-eglot--post-self-insert-hook ()
-				                   ;; remove eglot’s post-self-insert-hook in current buffer
-						                  (remove-hook 'post-self-insert-hook #'eglot--post-self-insert-hook t))))
+  (add-hook! 'eglot-managed-mode-hook :append
+    (defun +eglot--rm-eglot--post-self-insert-hook ()
+      ;; remove eglot’s post-self-insert-hook in current buffer
+      (remove-hook 'post-self-insert-hook #'eglot--post-self-insert-hook t))
+    (eglot-inlay-hints-mode -1)))
