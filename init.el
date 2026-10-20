@@ -16,8 +16,7 @@
 
 (doom!
        :completion
-       ;;(company +childframe)
-       (corfu +dabbrev +icons)
+       (corfu +orderless +dabbrev +icons)
        (vertico +icons) 
 
        :ui
@@ -37,10 +36,11 @@
        fold
        format
        (whitespace +guess +trim)
+       word-wrap
 
        :emacs
        (dired +icons)
-       ;;electric
+       electric
        undo
        vc
 
@@ -58,7 +58,7 @@
        editorconfig
        (eval +overlay)
        lookup
-       lsp
+       (lsp +eglot)
        (magit +childframe)
        tree-sitter
 
@@ -69,8 +69,8 @@
        :lang
        (cc +lsp +tree-sitter)
        emacs-lisp
-       (json +tree-sitter)
        (javascript +lsp +tree-sitter)
+       (json +tree-sitter)
        (lua +lsp +tree-sitter)
        (markdown +tree-sitter)
        org
