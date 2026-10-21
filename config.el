@@ -71,5 +71,8 @@
          (deactivate-mark nil))
     (indent-rigidly beg end (- offset))))
 
+;; Open .h files in C++ mode by default
+(add-to-list 'auto-mode-alist '("\\.h\\'" . c++-ts-mode))
+
 (map! :map c++-ts-mode-map
       "<backtab>" #'my/c-ts-dedent)
