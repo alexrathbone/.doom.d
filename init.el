@@ -58,7 +58,7 @@
        editorconfig
        (eval +overlay)
        lookup
-       (lsp +eglot)
+       lsp
        (magit +childframe)
        tree-sitter
 
