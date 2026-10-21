@@ -46,9 +46,30 @@
 
 (setq projectile-project-search-path '("~/code/"))
 
-(after! eglot
-  (add-hook! 'eglot-managed-mode-hook :append
-    (defun +eglot--rm-eglot--post-self-insert-hook ()
-      ;; remove eglot’s post-self-insert-hook in current buffer
-      (remove-hook 'post-self-insert-hook #'eglot--post-self-insert-hook t))
-    (eglot-inlay-hints-mode -1)))
+;; (after! eglot
+;;   (add-hook! 'eglot-managed-mode-hook :append
+;;     (defun +eglot--rm-eglot--post-self-insert-hook ()
+;;       ;; remove eglot’s post-self-insert-hook in current buffer
+;;       (remove-hook 'post-self-insert-hook #'eglot--post-self-insert-hook t))
+;;     (eglot-inlay-hints-mode -1)))
+
+(after! editorconfig
+  (add-hook! 'c++-ts-mode-hook #'editorconfig-mode-apply))
+
+(defun my/c-ts-dedent ()
+  "Dedent the current line or selected region by one indentation level."
+  (interactive)
+  (let* ((offset (if (boundp 'c-ts-mode-indent-offset)
+                     c-ts-mode-indent-offset
+                   4))
+         (beg (if (use-region-p)
+                  (region-beginning)
+                (line-beginning-position)))
+         (end (if (use-region-p)
+                  (region-end)
+                (line-end-position)))
+         (deactivate-mark nil))
+    (indent-rigidly beg end (- offset))))
+
+(map! :map c++-ts-mode-map
+      "<backtab>" #'my/c-ts-dedent)
